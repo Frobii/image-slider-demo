@@ -1,3 +1,47 @@
 body {
     margin: 0px;
 }
+
+.frame {
+    width: 200px;
+    height: 300px;
+    border: 2px solid black;
+    margin: 40px;
+    position: absolute;
+    left: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.slide-container {
+    width: 1000px;
+    height: 300px;
+    background-color: grey;
+    z-index: -1;
+    position: absolute;
+    right: -400px;
+}
+
+.button-container {
+    position: absolute;
+    display: flex;
+    width: 300px;
+    left: -50px;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between
+}
+
+.left-button, .right-button {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.right-button {
+    display: flex;
+    flex-direction: row-reverse;
+}
