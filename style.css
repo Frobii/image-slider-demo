@@ -21,6 +21,7 @@ body {
     z-index: -1;
     position: absolute;
     right: -400px;
+    display: flex;
 }
 
 .button-container {
@@ -43,8 +44,13 @@ body {
 }
 
 .right-button {
-    display: flex;
-    flex-direction: row-reverse;
+    background-image: url(./Icons/right-arrow.svg);
+    background-size: cover;
+}
+
+.left-button {
+    background-image: url(./Icons/left-arrow.svg);
+    background-size: cover;
 }
 
 .pick-pos-container {
@@ -67,4 +73,27 @@ body {
     border-radius: 50%;
     background-color: white;
     cursor: pointer;
+}
+
+.one, .two, .three, .four, .five {
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 300px;
+}
+
+.one {
+    background-image: url(./slide-images/A\ New\ Earth.jpeg );
+}
+.two {
+    background-image: url(./slide-images/ikigai.jpg);
+}
+.three {
+    background-image: url(./slide-images/Living\ and\ Dying.jpg);
+}
+.four {
+    background-image: url(./slide-images/meditations.jpg);
+}
+.five {
+    background-image: url(./slide-images/parzival.jpg);
 }
