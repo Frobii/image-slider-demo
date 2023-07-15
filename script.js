@@ -27,24 +27,36 @@ const imageSlider = () => {
     slideContainer.style.right = horizontalOffset;
   }
 
-  function viewCenter() {
+  function viewPosition(position) {
+    const slideContainer = document.querySelector('.slide-container');
+    const styles = window.getComputedStyle(slideContainer);
+    let horizontalOffset = styles.getPropertyValue('right');
+    horizontalOffset = parseInt(horizontalOffset, 10);
 
+    horizontalOffset = position;
+    horizontalOffset = `${horizontalOffset}px`;
+
+    slideContainer.style.right = horizontalOffset;
+  }
+
+  function viewCenter() {
+    viewPosition(-400);
   }
 
   function viewCenterRight() {
-
+    viewPosition(-200);
   }
 
   function viewCenterLeft() {
-
+    viewPosition(-600);
   }
 
   function viewFarRight() {
-
+    viewPosition(0);
   }
 
   function viewFarLeft() {
-
+    viewPosition(-800);
   }
 
   function activateSlideButtons() {
@@ -60,9 +72,41 @@ const imageSlider = () => {
     });
   }
 
+  function activatePickPosButtons() {
+    const center = document.querySelector('.center');
+    center.addEventListener('click', () => {
+      viewCenter();
+    });
+
+    const centerRight = document.querySelector('.center-right');
+    centerRight.addEventListener('click', () => {
+      viewCenterRight();
+    });
+
+    const centerLeft = document.querySelector('.center-left');
+    centerLeft.addEventListener('click', () => {
+      viewCenterLeft();
+    });
+
+    const farRight = document.querySelector('.far-right');
+    farRight.addEventListener('click', () => {
+      viewFarRight();
+    });
+
+    const farLeft = document.querySelector('.far-left');
+    farLeft.addEventListener('click', () => {
+      viewFarLeft();
+    });
+  }
+
+  function activateAllButtons() {
+    activateSlideButtons();
+    activatePickPosButtons();
+  }
+
   return {
-    activateSlideButtons,
+    activateAllButtons,
   };
 };
 
-imageSlider().activateSlideButtons();
+imageSlider().activateAllButtons();

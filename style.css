@@ -11,6 +11,7 @@ body {
     left: 400px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .slide-container {
@@ -44,4 +45,26 @@ body {
 .right-button {
     display: flex;
     flex-direction: row-reverse;
+}
+
+.pick-pos-container {
+    width: 150px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 260px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.pick-pos {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
 }
