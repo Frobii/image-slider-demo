@@ -40,6 +40,16 @@ body {
     height: 50px;
     font-size: 3rem;
     font-weight: 900;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.left-button:hover, .right-button:hover {
+    transform: scale(1.25);
+}
+
+.left-button:active, .right-button:active {
+    transform: scale(0.5);
 }
 
 .right-button {
@@ -57,7 +67,7 @@ body {
     height: 20px;
     background-color: rgba(0, 0, 0, 0.178);
     position: absolute;
-    top: 260px;
+    top: 310px;
     border-radius: 25px;
     display: flex;
     align-items: center;
@@ -72,6 +82,15 @@ body {
     border-radius: 50%;
     background-color: rgba(51, 51, 51, 0.589);
     cursor: pointer;
+    transition: transform .2s;
+}
+
+.pick-pos:hover {
+    transform: scale(2);
+}
+
+.pick-pos:active {
+    transform: scale(0.5);
 }
 
 .one, .two, .three, .four, .five {
