@@ -21,6 +21,7 @@ body {
     position: absolute;
     right: -400px;
     display: flex;
+    transition: right 0.2s;
 }
 
 .button-container {
