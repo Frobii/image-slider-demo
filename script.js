@@ -63,12 +63,31 @@ const imageSlider = () => {
     const rightButton = document.querySelector('.right-button');
     const leftButton = document.querySelector('.left-button');
 
+    let rightButtonDisabled = false;
+    let leftButtonDisabled = false;
+
     rightButton.addEventListener('click', () => {
-      slideRight();
+      if (!rightButtonDisabled) {
+        rightButtonDisabled = true;
+
+        slideRight();
+
+        setTimeout(() => {
+          rightButtonDisabled = false;
+        }, 200);
+      }
     });
 
     leftButton.addEventListener('click', () => {
-      slideLeft();
+      if (!leftButtonDisabled) {
+        leftButtonDisabled = true;
+
+        slideLeft();
+
+        setTimeout(() => {
+          leftButtonDisabled = false;
+        }, 200);
+      }
     });
   }
 
