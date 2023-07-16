@@ -87,7 +87,7 @@ body {
 }
 
 .pick-pos:hover {
-    transform: scale(2);
+    transform: scale(1.75);
 }
 
 .pick-pos:active {

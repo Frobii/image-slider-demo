@@ -91,6 +91,41 @@ const imageSlider = () => {
     });
   }
 
+  function autoSlide() {
+    const slideContainer = document.querySelector('.slide-container');
+    const styles = window.getComputedStyle(slideContainer);
+    let horizontalOffset = styles.getPropertyValue('right');
+    horizontalOffset = parseInt(horizontalOffset, 10);
+
+    if (horizontalOffset === -800) {
+      horizontalOffset = -600;
+      horizontalOffset = `${horizontalOffset}px`;
+      slideContainer.style.right = horizontalOffset;
+    } else if (horizontalOffset === -600) {
+      horizontalOffset = -400;
+      horizontalOffset = `${horizontalOffset}px`;
+      slideContainer.style.right = horizontalOffset;
+    } else if (horizontalOffset === -400) {
+      horizontalOffset = -200;
+      horizontalOffset = `${horizontalOffset}px`;
+      slideContainer.style.right = horizontalOffset;
+    } else if (horizontalOffset === -200) {
+      horizontalOffset = 0;
+      horizontalOffset = `${horizontalOffset}px`;
+      slideContainer.style.right = horizontalOffset;
+    } else if (horizontalOffset === 0) {
+      horizontalOffset = -800;
+      horizontalOffset = `${horizontalOffset}px`;
+      slideContainer.style.right = horizontalOffset;
+    }
+  }
+
+  function activateAutoSlide() {
+    setInterval(() => {
+      autoSlide();
+    }, 5000);
+  }
+
   function activatePickPosButtons() {
     const center = document.querySelector('.center');
     center.addEventListener('click', () => {
@@ -125,7 +160,9 @@ const imageSlider = () => {
 
   return {
     activateAllButtons,
+    activateAutoSlide,
   };
 };
 
 imageSlider().activateAllButtons();
+imageSlider().activateAutoSlide();
